@@ -1,14 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.scss';
 import { BrowserRouter } from 'react-router-dom';
 import { AppRoutes } from './routes/app.route';
+import { UserAuthContextProvider } from 'app/modules/auth/userAuthContext';
 
 
 function App() {
   return (
     <BrowserRouter>
-      <AppRoutes />
+      <UserAuthContextProvider>
+        <AppRoutes />
+      </UserAuthContextProvider>
     </BrowserRouter>
   );
 }
