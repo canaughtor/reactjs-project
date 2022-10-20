@@ -4,18 +4,24 @@ import './index.scss';
 import App from './app/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
-import store from './app/redux/store'
+import store from './app/redux/store';
+import { ThemeProvider } from '@emotion/react';
+import theme from 'SaweraTheme';
+import { CssBaseline } from '@mui/material';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
+
 root.render(
   <React.StrictMode>
+    <ThemeProvider theme={theme}>
     <Provider store={store}>
+      <CssBaseline/>
       <App />
     </Provider>
-  </React.StrictMode>
-);
+    </ThemeProvider>
 
+  </React.StrictMode>,
+);
 
 reportWebVitals();

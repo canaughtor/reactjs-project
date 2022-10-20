@@ -16,7 +16,7 @@ export function UserAuthContextProvider({ children }: any) {
   const [user, setUser] = useState({});
   const navigate = useNavigate();
 
-  function logIn(email : string, password : string) {
+  function logIn(email: string, password: string) {
     return signInWithEmailAndPassword(auth, email, password);
   }
   function logOut() {
@@ -32,7 +32,6 @@ export function UserAuthContextProvider({ children }: any) {
     const unsubscribe = onAuthStateChanged(auth, (currentuser) => {
       setUser(currentuser || {});
       if (!currentuser) {
-        
         navigate('/');
       }
     });
@@ -42,10 +41,13 @@ export function UserAuthContextProvider({ children }: any) {
     };
   }, [navigate]);
 
-  return <userAuthContext.Provider value={{ user, logIn, logOut, googleSignIn }}>{children}</userAuthContext.Provider>;
+  return (
+    <userAuthContext.Provider value={{ user, logIn, logOut, googleSignIn }}>
+      {children}
+    </userAuthContext.Provider>
+  );
 }
 
 export function useUserAuth() {
   return useContext(userAuthContext);
 }
-

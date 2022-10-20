@@ -1,13 +1,12 @@
-import { Box, Button } from '@mui/material';
-import { useUserAuth } from './auth/userAuthContext';
+import { Box} from '@mui/material';
 
 const Home = () => {
-    const { logOut } = useUserAuth();
 
-    const handleLogout = async () => {
-        await logOut();
-    }
-    return <Box><Button onClick={() => handleLogout()}>Logout</Button>Home</Box>
-}
+  return (
+    <Box>
+      Home
+    </Box>
+  );
+};
 
-export default Home
+export default Home;
