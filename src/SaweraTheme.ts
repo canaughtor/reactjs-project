@@ -9,7 +9,7 @@ const theme = createTheme({
       contrastText: '#000000' 
     },
     secondary: {
-      main: '#F2F9FC',
+      main: '#000000',
     },
     error: {
       main: red.A400,
