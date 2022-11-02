@@ -6,9 +6,7 @@ import { Navigate } from 'react-router-dom'
 export const RequireAuth = ({ children } : any) => {
     const auth = useUserAuth()
 
-    if(!auth.user) {
-        return <Navigate to='/'/>
-    }
+    !auth.user ? <Navigate to='/'/> : null
 
     return children 
 }

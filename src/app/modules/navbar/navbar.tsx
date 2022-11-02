@@ -25,10 +25,10 @@ export const Navbar = () => {
           Sawera
         </Typography>
         <Button
-          id='demo-positioned-button'
+          id='positioned-button'
           variant='contained'
           disableElevation
-          aria-controls={open ? 'demo-positioned-menu' : undefined}
+          aria-controls={open ? 'positioned-menu' : undefined}
           aria-haspopup='true'
           aria-expanded={open ? 'true' : undefined}
           onClick={handleClick}
@@ -36,8 +36,7 @@ export const Navbar = () => {
           Options
         </Button>
         <Menu
-          id='demo-positioned-menu'
-          aria-labelledby='demo-positioned-button'
+          id='positioned-menu'
           anchorEl={anchorEl}
           open={open}
           onClose={handleClose}
@@ -50,8 +49,8 @@ export const Navbar = () => {
             horizontal: 'left',
           }}
         >
-          <MenuItem onClick={handleClose}>Profile</MenuItem>
-          <MenuItem onClick={handleClose}>My account</MenuItem>
+          <MenuItem onClick={handleClose}>My Account</MenuItem>
+          <MenuItem onClick={handleClose}>Help</MenuItem>
           <MenuItem onClick={() => handleLogout()}>Logout</MenuItem>
         </Menu>
       </Toolbar>

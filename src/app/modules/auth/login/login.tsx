@@ -72,7 +72,7 @@ const Login = () => {
                 >
                   {loading ? 'LogIn...' : 'LogIn'}
                 </Button>
-                <Box>
+                <Box component={'span'}>
                   <GoogleButton
                     type='light'
                     label='Login with Google'

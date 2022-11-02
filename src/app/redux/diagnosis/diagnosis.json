@@ -1,0 +1,54 @@
+{
+    "protocol": [
+        {
+            "id": "f0f659bf-0902-4017-8abc-1e61e966ff75",
+            "diagnosis": "pB-ALL",
+            "name": "AIEOP BFM ALL 2017"
+        },
+        {
+            "id": "1a862387-5cdd-4b2c-80b0-22df517abe75",
+            "diagnosis": "T-ALL",
+            "name": "AIEOP BFM ALL 2017"
+        }
+    ],
+    "country": [
+        {
+            "id": "6a9caa94-8eec-4520-beb1-9583cd303325",
+            "name": "Switzerland",
+            "code": "CH",
+            "status": true,
+            "dial_code": "+41",
+            "clinics": [
+                {
+                    "country_id": "6a9caa94-8eec-4520-beb1-9583cd303325",
+                    "id": "a99e606a-ef75-46a4-866d-e0efc7fc7bdf",
+                    "name": "UKBB"
+                },
+                {
+                    "country_id": "6a9caa94-8eec-4520-beb1-9583cd303325",
+                    "id": "7b3ed1c7-8f65-47f5-8114-ef5057d243a6",
+                    "name": "Ostschweizer Kinderspital (OKS)"
+                },
+                {
+                    "country_id": "6a9caa94-8eec-4520-beb1-9583cd303325",
+                    "id": "bb3c856e-067a-4127-ae3c-83d4c91f20a1",
+                    "name": "Kantonspital Aarau (KSA)"
+                }
+            ]
+        },
+        {
+            "id": "03a8319b-f20f-420d-bab7-b14b840e2939",
+            "name": "Germany",
+            "code": "DE",
+            "status": true,
+            "dial_code": "+49",
+            "clinics": [
+                {
+                    "country_id": "03a8319b-f20f-420d-bab7-b14b840e2939",
+                    "id": "60a249b7-0b2d-4ea5-ba40-665cf5d6a1ea",
+                    "name": "Uni Kiel"
+                }
+            ]
+        }
+    ]
+}
