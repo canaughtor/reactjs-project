@@ -13,8 +13,7 @@ import { fetchData } from 'app/redux/diagnosis/dataSlice';
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 console.log('Initial state', store.getState());
 
-store.dispatch(fetchData())
-
+store.dispatch(fetchData());
 
 root.render(
   <React.StrictMode>

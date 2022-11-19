@@ -43,46 +43,35 @@ const Login = () => {
       <Container maxWidth='xs' sx={{ mr: 0 }}>
         <Box component='form' sx={{ mt: 2 }}>
           <Stack direction={'column'} spacing={2}>
-            <Box>
-              <Typography variant='h6' align='center'>
-                LOGIN
-              </Typography>
-              <Typography variant='body1' align='center'>
-                Please enter your credentials to login.
-              </Typography>
-            </Box>
-            <Box component='form'>
-              <Stack direction={'column'} spacing={2}>
-                <TextField
-                  id='outline-required'
-                  type='text'
-                  placeholder='email'
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <TextField
-                  id='outlined-password-input'
-                  type='password'
-                  placeholder='password'
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-                <Button
-                  variant='contained'
-                  onClick={(event) => handleSubmit(event)}
-                  disabled={loading}
-                >
-                  {loading ? 'LogIn...' : 'LogIn'}
-                </Button>
-                <Box component={'span'}>
-                  <GoogleButton
-                    type='light'
-                    label='Login with Google'
-                    onClick={handleGoogleSignIn}
-                  />
-                </Box>
-
-                {error && <p className={'error'}>{error}</p>}
-              </Stack>
-            </Box>
+            <Typography variant='h6' align='center'>
+              LOGIN
+            </Typography>
+            <Typography variant='body1' align='center'>
+              Please enter your credentials to login.
+            </Typography>
+            <Stack direction={'column'} spacing={2}>
+              <TextField
+                id='outline-required'
+                type='text'
+                placeholder='email'
+                onChange={(e) => setEmail(e.target.value)}
+              />
+              <TextField
+                id='outlined-password-input'
+                type='password'
+                placeholder='password'
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <Button
+                variant='contained'
+                onClick={(event) => handleSubmit(event)}
+                disabled={loading}
+              >
+                {loading ? 'LogIn...' : 'LogIn'}
+              </Button>
+              <GoogleButton type='light' label='Login with Google' onClick={handleGoogleSignIn} />
+              {error && <p className={'error'}>{error}</p>}
+            </Stack>
           </Stack>
         </Box>
       </Container>

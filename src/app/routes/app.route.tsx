@@ -1,29 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from 'app/modules/home';
 import Login from 'app/modules/auth/login/login';
-import DataView from 'app/redux/diagnosis/DataView';
-import { RequireAuth } from './RequireAuth';
-
+import DataView from 'app/modules/diagnosis/DataView';
 
 export const AppRoutes = () => {
   return (
     <Routes>
-      <Route
-        path='/'
-        element={
-          <RequireAuth>
-            <Login />
-          </RequireAuth>
-        }
-      />
-      <Route
-        path='/home'
-        element={
-          <RequireAuth>
-            <Home />
-          </RequireAuth>
-        }
-      />
+      <Route path='/' element={<Login />} />
+      <Route path='/home' element={<Home />} />
       <Route path='/home/clinic-data' element={<DataView />} />
     </Routes>
   );

@@ -1,33 +1,45 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { RestApiService } from 'app/core/services/https/restApiService';
 import { ApiEndpoint } from 'app/core/services/https/apiEndpoint';
-import { State } from './diagnosis.types';
-
-
+import { Diagnosis, State } from './diagnosis.types';
 
 const initialState: State = {
   loading: false,
-  data: { protocol: [], country: [] },
+  data: {
+    data: [
+      {
+        id: '',
+        name: '',
+        diagnosisId: '',
+        diagnosis: '',
+        clinic: '',
+        country: '',
+        version: '',
+        effectiveDate: '',
+      },
+    ],
+  },
   error: '',
 };
 
-const restApiService = new RestApiService()
+const restApiService = new RestApiService();
 
-export const fetchData = createAsyncThunk('data/fetchdata', () => {
-return restApiService.invoke(ApiEndpoint.GET_DIAGNOSIS)?.then((response) => {response.data})
+export const fetchData = createAsyncThunk('data/fetchdata', async () => {
+  const response = await restApiService.invoke(ApiEndpoint.GET_DIAGNOSIS);
+  return response?.data;
 });
 
 const dataSlice = createSlice({
-  name: 'clinicData',
+  name: 'clinicList',
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchData.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(fetchData.fulfilled, (state, action: PayloadAction<any>) => {
+    builder.addCase(fetchData.fulfilled, (state, action: PayloadAction<Diagnosis>) => {
       state.loading = false;
-      state.data = action.payload;
+      state.data.data = action.payload.data;
       state.error = '';
     });
     builder.addCase(fetchData.rejected, (state, action) => {

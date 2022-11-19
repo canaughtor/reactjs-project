@@ -6,7 +6,7 @@ export class ApiEndpoint {
     };
     public static GET_DIAGNOSIS: APIDef = {
       method: 'GET',
-      api: () => `v2/diagnosis`,
+      api: () => `admin/diagnosis/`,
     };
     
   }
@@ -16,9 +16,9 @@ export class ApiEndpoint {
   
   export interface APIDef {
     method: string;
-    api: any;
+    api: (ApiInput : ApiInput) => string
   }
   
   export interface ApiInput {
-    id?: any;
+    id?: string;
   }

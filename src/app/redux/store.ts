@@ -4,7 +4,7 @@ import dataSlice from 'app/redux/diagnosis/dataSlice';
 
 const store = configureStore({
   reducer: {
-   clinicData : dataSlice,
+   clinicList : dataSlice,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });

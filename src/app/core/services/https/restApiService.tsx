@@ -20,7 +20,7 @@ export class RestApiService {
       'Content-Type': 'application/json',
     };
     const httpOptions = { headers: headers, params: queryMap, observe: 'body' };
-    axios.defaults.baseURL = 'https://go-dot-sawera-app.ew.r.appspot.com/api'
+    axios.defaults.baseURL = '/'
     switch (method) {
       case 'POST':
         return this.post<T>(api, body, httpOptions);

@@ -1,14 +1,11 @@
-import { Box } from '@mui/material';
-import DataView from 'app/redux/diagnosis/DataView';
+import DataView from 'app/modules/diagnosis/DataView';
 
 
 
 const Home = () => {
 
   return (
-      <Box>
         <DataView />
-      </Box>
   );
 };
 
