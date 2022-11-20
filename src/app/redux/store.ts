@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from 'redux-logger'
-import dataSlice from 'app/redux/diagnosis/dataSlice';
+import countrySlice from './country/countrySlice';
+import protocolSlice from 'app/redux/protocol/protocolSlice';
 
 const store = configureStore({
   reducer: {
-   clinicList : dataSlice,
+   protocolList : protocolSlice,
+   countryList: countrySlice,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });

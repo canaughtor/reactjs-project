@@ -1,11 +1,10 @@
-import DataView from 'app/modules/diagnosis/DataView';
-
-
+import LeftTab from './Tabs/LeftTab';
 
 const Home = () => {
-
   return (
-        <DataView />
+    <>
+      <LeftTab />
+    </>
   );
 };
 

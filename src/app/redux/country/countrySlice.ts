@@ -1,21 +1,19 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { RestApiService } from 'app/core/services/https/restApiService';
 import { ApiEndpoint } from 'app/core/services/https/apiEndpoint';
-import { Diagnosis, State } from './diagnosis.types';
+import { Country, CountryState } from './country.types';
 
-const initialState: State = {
+
+const initialState: CountryState = {
   loading: false,
   data: {
     data: [
       {
         id: '',
         name: '',
-        diagnosisId: '',
-        diagnosis: '',
-        clinic: '',
-        country: '',
-        version: '',
-        effectiveDate: '',
+        code: '',
+        status: false,
+        dialCode: '',
       },
     ],
   },
@@ -24,29 +22,29 @@ const initialState: State = {
 
 const restApiService = new RestApiService();
 
-export const fetchData = createAsyncThunk('data/fetchdata', async () => {
-  const response = await restApiService.invoke(ApiEndpoint.GET_DIAGNOSIS);
+export const fetchCountry = createAsyncThunk('data/fetchdata', async () => {
+  const response = await restApiService.invoke(ApiEndpoint.GET_COUNTRY);
   return response?.data;
 });
 
-const dataSlice = createSlice({
-  name: 'clinicList',
+const countrySlice = createSlice({
+  name: 'countryList',
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(fetchData.pending, (state) => {
+    builder.addCase(fetchCountry.pending, (state) => {
       state.loading = true;
     });
-    builder.addCase(fetchData.fulfilled, (state, action: PayloadAction<Diagnosis>) => {
+    builder.addCase(fetchCountry.fulfilled, (state, action: PayloadAction<Country>) => {
       state.loading = false;
       state.data.data = action.payload.data;
       state.error = '';
     });
-    builder.addCase(fetchData.rejected, (state, action) => {
+    builder.addCase(fetchCountry.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message || 'Something went wrong';
     });
   },
 });
 
-export default dataSlice.reducer;
+export default countrySlice.reducer;

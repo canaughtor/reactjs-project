@@ -8,7 +8,10 @@ export class ApiEndpoint {
       method: 'GET',
       api: () => `admin/diagnosis/`,
     };
-    
+    public static GET_COUNTRY: APIDef = {
+      method: 'GET',
+      api: () => `api/v2/countries`,
+    };
   }
   
 

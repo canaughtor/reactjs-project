@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from 'app/modules/home';
 import Login from 'app/modules/auth/login/login';
-import DataView from 'app/modules/diagnosis/DataView';
+import DataView from 'app/modules/diagnosis/ProtocolView';
 
 export const AppRoutes = () => {
   return (

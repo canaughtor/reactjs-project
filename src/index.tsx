@@ -8,7 +8,7 @@ import store from './app/redux/store';
 import { ThemeProvider } from '@emotion/react';
 import theme from './SaweraTheme';
 import { CssBaseline } from '@mui/material';
-import { fetchData } from 'app/redux/diagnosis/dataSlice';
+import { fetchData } from 'app/redux/protocol/protocolSlice';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 console.log('Initial state', store.getState());
